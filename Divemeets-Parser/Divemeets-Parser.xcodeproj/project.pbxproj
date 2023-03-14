@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00ACFB7829BFFF9800322B99 /* UIViewRepresentableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ACFB7729BFFF9800322B99 /* UIViewRepresentableBootcamp.swift */; };
+		00ACFB7C29C00AC700322B99 /* SwiftUIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ACFB7B29C00AC700322B99 /* SwiftUIWebView.swift */; };
 		4D74FEF329B2F19800401178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74FEF229B2F19800401178 /* AppDelegate.swift */; };
 		4D74FEF529B2F19800401178 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74FEF429B2F19800401178 /* SceneDelegate.swift */; };
 		4D74FEF729B2F19800401178 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74FEF629B2F19800401178 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00ACFB7729BFFF9800322B99 /* UIViewRepresentableBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRepresentableBootcamp.swift; sourceTree = "<group>"; };
+		00ACFB7B29C00AC700322B99 /* SwiftUIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIWebView.swift; sourceTree = "<group>"; };
 		4D74FEEF29B2F19800401178 /* Divemeets-Parser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Divemeets-Parser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D74FEF229B2F19800401178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D74FEF429B2F19800401178 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 				4D74FEFB29B2F19900401178 /* Assets.xcassets */,
 				4D74FEFD29B2F19900401178 /* LaunchScreen.storyboard */,
 				4D74FF0029B2F19900401178 /* Info.plist */,
+				00ACFB7729BFFF9800322B99 /* UIViewRepresentableBootcamp.swift */,
+				00ACFB7B29C00AC700322B99 /* SwiftUIWebView.swift */,
 			);
 			path = "Divemeets-Parser";
 			sourceTree = "<group>";
@@ -150,8 +156,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D74FEF729B2F19800401178 /* ViewController.swift in Sources */,
+				00ACFB7C29C00AC700322B99 /* SwiftUIWebView.swift in Sources */,
 				4D74FF0729B2F1EB00401178 /* HTMLParser.swift in Sources */,
 				4D74FEF329B2F19800401178 /* AppDelegate.swift in Sources */,
+				00ACFB7829BFFF9800322B99 /* UIViewRepresentableBootcamp.swift in Sources */,
 				4D74FEF529B2F19800401178 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
