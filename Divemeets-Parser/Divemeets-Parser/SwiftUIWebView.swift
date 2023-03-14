@@ -10,15 +10,20 @@ import WebKit
 
 struct SwiftUIWebView: View {
     @State var request: String = "https://secure.meetcontrol.com/divemeets/system/profile.php?number=51197"
+    @State var parsedHTML: String = ""
     
     var body: some View {
-        WebView(request: $request)
+        VStack {
+            Text(parsedHTML)
+            WebView(request: $request, parsedHTML: $parsedHTML)
+        }
     }
 }
 
 struct WebView: UIViewRepresentable {
-    
+    let htmlParser: HTMLParser = HTMLParser()
     @Binding var request: String
+    @Binding var parsedHTML: String
     
     func makeUIView(context: Context) -> WKWebView {
         let webView: WKWebView = {
@@ -38,28 +43,31 @@ struct WebView: UIViewRepresentable {
         return webView
     }
     
+    // from SwiftUI to UIKit
     func updateUIView(_ uiView: WKWebView, context: Context) {
         guard let url = URL(string: request) else { return }
         uiView.load(URLRequest(url: url))
+        parsedHTML = htmlParser.parse(html: request)
     }
     
+    // From UIKit to SwiftUI
     func makeCoordinator() -> Coordinator {
-        return Coordinator()
+        return Coordinator(html: $parsedHTML)
     }
     
     class Coordinator: NSObject, WKNavigationDelegate {
-        let parser: HTMLParser
+        let htmlParser: HTMLParser = HTMLParser()
+        @Binding var parsedHTML: String
         
-        override init() {
-            self.parser = HTMLParser()
+        init(html: Binding<String>) {
+            self._parsedHTML = html
         }
         
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
             webView.evaluateJavaScript("document.body.innerHTML;") { [weak self] result, error in
                 guard let html = result as? String, error == nil else { print("Failed to get HTML"); return
                 }
-                
-                self?.parser.parse(html: html)
+                self?.parsedHTML = self?.htmlParser.parse(html: html) ?? ""
             }
         }
         
